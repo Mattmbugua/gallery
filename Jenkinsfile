@@ -59,11 +59,14 @@
 // }
 pipeline {
     agent any
-    stages {
-        stage('Check Node Version') {
+    tools {
+        nodejs 'NodeJS_18'
+    }
+    stage('Install Dependencies') {
             steps {
-                sh 'echo "Testing shell execution"'
+                script {
+                    sh 'npm version'
+                }
             }
         }
-    }
 }
