@@ -62,11 +62,12 @@ pipeline {
     tools {
         nodejs 'NodeJS_18'
     }
+    stages{
     stage('Install Dependencies') {
             steps {
                 script {
                     sh 'npm version'
                 }
             }
-        }
+        }}
 }
