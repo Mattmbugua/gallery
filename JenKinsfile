@@ -1,31 +1,35 @@
 pipeline {
     agent any
 
+    tools {
+        nodejs 'NodeJS_18'
+    }
+
     stages {
-        stage('Checkout') {
-            steps {
-                git branch: 'main', url: 'https://github.com/Mattmbugua/gallery.git'
-            }
-        }
+        // stage('Checkout') {
+        //     steps {
+        //         git branch: 'main', url: 'https://github.com/Mattmbugua/gallery.git'
+        //     }
+        // }
 
         stage('Install Dependencies') {
             steps {
-                sh 'npm install'
+                sh 'npm version'
             }
         }
 
-        stage('Build') {
-            steps {
-                sh 'npm run build'
-            }
-        }
+        // stage('Build') {
+        //     steps {
+        //         sh 'npm run build'
+        //     }
+        // }
 
-        stage('Deploy') {
-            steps {
-                sh 'echo Deploying application...'
-                // Add deployment commands (e.g., Render, AWS, or Heroku)
-            }
-        }
+        // stage('Deploy') {
+        //     steps {
+        //         sh 'echo Deploying application...'
+        //         // Add deployment commands (e.g., Render, AWS, or Heroku)
+        //     }
+        // }
     }
 
     post {
