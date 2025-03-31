@@ -65,9 +65,9 @@ pipeline {
     stages{
     stage('Install Dependencies') {
             steps {
-                script {
+                
                     sh 'npm version'
-                }
+                
             }
         }}
 }
