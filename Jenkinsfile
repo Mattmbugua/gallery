@@ -46,7 +46,7 @@ pipeline {
                     // Send an email notification if the tests fail
                     mail to: 'mathewmbugua2015@gmail.com',
                          subject: "Build failed: ${currentBuild.fullDisplayName}",
-                         body: "The build failed during the 'Run Tests' stage. Please check the logs."
+                         body: "The build failed during the 'Run Tests' stage. Please check the logs. 9q8yegfqygf"
                 }
             }
         }
@@ -67,7 +67,7 @@ pipeline {
             emailext(
                 to: "${EMAIL_RECIPIENTS}",
                 subject: "Jenkins Build Failed: ${currentBuild.fullDisplayName}",
-                body: "The build failed. Please check the Jenkins logs for more details.",
+                body: "The build failedsldfjkvjklbnsdfkjpphjsfdb. Please check the Jenkins logs for more details.",
                 mimeType: 'text/html'
             )
         }
