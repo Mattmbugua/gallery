@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         // Define environment variables (e.g., email configuration or other secrets)
-        EMAIL_RECIPIENTS = "mathewmbugua2015@gmail.com"  // Replace with the email you want to notify on failure
+        EMAIL_RECIPIENTS = "mathewmugua2015@gmail.com"  // Replace with the email you want to notify on failure
     }
     tools {
         nodejs 'NodeJS 16'
@@ -44,7 +44,7 @@ pipeline {
             post {
                 failure {
                     // Send an email notification if the tests fail
-                    mail to: 'mathewmbugua2015@gmail.com',
+                    mail to: 'mathewmugua2015@gmail.com',
                          subject: "Build failed: ${currentBuild.fullDisplayName}",
                          body: "The build failed during the 'Run Tests' stage. Please check the logs. 9q8yegfqygf"
                 }
