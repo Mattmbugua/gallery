@@ -33,6 +33,23 @@ pipeline {
                 
             }
         }
+        stage('Run Tests') {
+            steps {
+                
+                    // Run the tests with npm
+                    sh 'npm test'
+                
+            }
+
+            post {
+                failure {
+                    // Send an email notification if the tests fail
+                    mail to: 'mathewmbugua2015@gmail.com',
+                         subject: "Build failed: ${currentBuild.fullDisplayName}",
+                         body: "The build failed during the 'Run Tests' stage. Please check the logs."
+                }
+            }
+        }
 
         
         
