@@ -5,11 +5,14 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const path = require('path');
 const config = require('./_config');
-const config = require('./_config');  // Import the config file
+ // Import the config file
 
 // Define routes
 let index = require('./routes/index');
 let image = require('./routes/image');
+
+// Initializing the app
+const app = express();
 
 
 
@@ -30,8 +33,7 @@ db.once('open', ()=>{
     console.log('Database connected successfully')
 })
 
-// Initializing the app
-const app = express();
+
 
 
 // View Engine
