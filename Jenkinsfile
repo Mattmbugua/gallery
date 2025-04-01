@@ -1,9 +1,9 @@
 pipeline {
     agent any
-    environment {
-        // Define environment variables (e.g., email configuration or other secrets)
-        EMAIL_RECIPIENTS = "mathewmugua2015@gmail.com"  // Replace with the email you want to notify on failure
-    }
+    // environment {
+    //     // Define environment variables (e.g., email configuration or other secrets)
+    //     EMAIL_RECIPIENTS = "mathewmugua2015@gmail.com"  // Replace with the email you want to notify on failure
+    // }
     tools {
         nodejs 'NodeJS 16'
     }
@@ -37,7 +37,7 @@ pipeline {
             steps {
                 
                     // Run the tests with npm
-                    sh 'npm test'
+                    sh 'npm run test'
                 
             }
 
