@@ -63,9 +63,22 @@ pipeline {
         nodejs 'NodeJS 16'
     }
     stages{
-    stage('Install Dependencies') {
+    stage('Check npm') {
             steps {
                 sh 'npm --version'
                 }
-        }}
+        }
+        // Stage to install dependencies
+    stage('Install Dependencies') {
+        steps {
+           
+                // Ensure npm is installed and install project dependencies
+                sh 'npm install'
+            
+        }
+    }
+        
+        
+        
+        }
 }
