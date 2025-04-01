@@ -60,14 +60,12 @@
 pipeline {
     agent any
     tools {
-        nodejs 'NodeJS_18'
+        nodejs 'NodeJS 16'
     }
     stages{
     stage('Install Dependencies') {
             steps {
-                
-                    sh 'npm version'
-                
-            }
+                sh 'npm --version'
+                }
         }}
 }
