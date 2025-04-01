@@ -59,6 +59,8 @@ pipeline {
    post {
         success {
             echo "Pipeline completed successfully!"
+            //send slack message 
+             slackSend(channel: 'mathew_ip1', message: "❌ Build worked.")
             // Send success email
             emailext(
                 subject: "Jenkins Build Successful",
@@ -68,6 +70,10 @@ pipeline {
         }
         failure {
             echo "Pipeline failed!"
+
+
+
+            slackSend(channel: 'mathew_ip1', message: "❌ Build failed.")
             // Send failure email
             emailext(
                 subject: "Jenkins Build Failed",
