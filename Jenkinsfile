@@ -37,6 +37,16 @@ pipeline {
                     sh 'npm run test'
                 
             }
+             post {
+                failure {
+                    // Send email if the tests fail
+                    emailext(
+                        subject: "Jenkins Build Failed: Test Stage",
+                        body: "The build failed at the Test stage. Please check the Jenkins job for more details.",
+                        to: 'mathewmbugua2015@gmail.com' // Change this to your email address
+                    )
+                }
+            }
 
             
         }
@@ -46,20 +56,24 @@ pipeline {
         
         
     }
-    post {
+   post {
         success {
             echo "Pipeline completed successfully!"
+            // Send success email
+            emailext(
+                subject: "Jenkins Build Successful",
+                body: "The Jenkins pipeline has completed successfully. All stages passed.",
+                to: 'mathewmbugua2015@gmail.com' // Change this to your email address
+            )
         }
         failure {
             echo "Pipeline failed!"
-            
-            // // Send an email notification if the pipeline fails
-            // emailext(
-            //     to: "${EMAIL_RECIPIENTS}",
-            //     subject: "Jenkins Build Failed: ${currentBuild.fullDisplayName}",
-            //     body: "The build failedsldfjkvjklbnsdfkjpphjsfdb. Please check the Jenkins logs for more details.",
-            //     mimeType: 'text/html'
-            // )
+            // Send failure email
+            emailext(
+                subject: "Jenkins Build Failed",
+                body: "The Jenkins pipeline has failed. Please check the Jenkins job for more details.",
+                to: 'mathewmbugua2015@gmail.com' // Change this to your email address
+            )
         }
     }
 }
