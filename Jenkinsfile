@@ -73,7 +73,7 @@ pipeline {
 
 
 
-            slackSend(channel: 'mathew_ip1', message: "❌ Build failed.Try again!")
+            slackSend(channel: 'mathew_ip1', message: "❌ Build failed.Try building again!")
             // Send failure email
             // emailext(
             //     subject: "Jenkins Build Failed",
