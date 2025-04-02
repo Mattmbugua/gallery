@@ -64,7 +64,7 @@ pipeline {
             //Send success email
             emailext(
                 subject: "Jenkins Build Successful",
-                body: "The Jenkins pipeline has completed successfully. All stages passed.",
+                body: "The Jenkins pipeline has completed successfully.All stages passed.",
                 to: 'mathewmbugua2015@gmail.com' // Change this to your email address
             )
         }
