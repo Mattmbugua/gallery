@@ -60,7 +60,7 @@ pipeline {
         success {
             echo "Pipeline completed successfully!"
             //send slack message 
-             slackSend(channel: 'mathew_ip1', message: "❌ Build worked.")
+             slackSend(channel: 'mathew_ip1', message: "✅ Build ${env.BUILD_NUMBER} succeeded! View it here: ${env.BUILD_URL}")
             // Send success email
             // emailext(
             //     subject: "Jenkins Build Successful",
