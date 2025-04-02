@@ -62,11 +62,11 @@ pipeline {
             //send slack message 
              slackSend(channel: 'mathew_ip1', message: "❌ Build worked.")
             // Send success email
-            emailext(
-                subject: "Jenkins Build Successful",
-                body: "The Jenkins pipeline has completed successfully. All stages passed.",
-                to: 'mathewmbugua2015@gmail.com' // Change this to your email address
-            )
+            // emailext(
+            //     subject: "Jenkins Build Successful",
+            //     body: "The Jenkins pipeline has completed successfully. All stages passed.",
+            //     to: 'mathewmbugua2015@gmail.com' // Change this to your email address
+            // )
         }
         failure {
             echo "Pipeline failed!"
@@ -75,11 +75,11 @@ pipeline {
 
             slackSend(channel: 'mathew_ip1', message: "❌ Build failed.")
             // Send failure email
-            emailext(
-                subject: "Jenkins Build Failed",
-                body: "The Jenkins pipeline has failed. Please check the Jenkins job for more details.",
-                to: 'mathewmbugua2015@gmail.com' // Change this to your email address
-            )
+            // emailext(
+            //     subject: "Jenkins Build Failed",
+            //     body: "The Jenkins pipeline has failed. Please check the Jenkins job for more details.",
+            //     to: 'mathewmbugua2015@gmail.com' // Change this to your email address
+            // )
         }
     }
 }
