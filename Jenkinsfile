@@ -41,7 +41,7 @@ pipeline {
                 failure {
                     // Send email if the tests fail
                     emailext(
-                        subject: "Jenkins Build Failed: Test Stage.",
+                        subject: "Jenkins Build Failed: Testing Stage.",
                         body: "The build failed at the Test stage. Please check the Jenkins job for more details.",
                         to: 'mathewmbugua2015@gmail.com' // Change this to your email address
                     )
