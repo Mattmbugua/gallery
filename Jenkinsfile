@@ -40,6 +40,7 @@ pipeline {
         //rnd_BhT1p7UZ7huNC3vwhljXFdgQFQHI
         stage('deploying') {
             steps {
+                script {
             
                     // Ensure npm is installed and install project dependencies
                     sh '''
@@ -48,7 +49,9 @@ pipeline {
                     -H "Content-Type: application/json" \
                     -d '{"branch":"master"}
                     '''
-                    
+
+
+                }
                 
             }
         }
