@@ -43,12 +43,10 @@ pipeline {
                 script {
             
                     // Ensure npm is installed and install project dependencies
-                    sh '''
-                    curl -X POST https://api.render.com/v1/services/srv-cvlcl8bipnbc73di56r0/deploys \                                             
-                    -H "Authorization: Bearer rnd_BhT1p7UZ7huNC3vwhljXFdgQFQHI" \
-                    -H "Content-Type: application/json" \
-                    -d '{"branch":"master"}
-                    '''
+                   
+
+                    sh 'curl -X POST https://api.render.com/v1/services/srv-cvlcl8bipnbc73di56r0/deploys -H "Authorization: Bearer $rnd_BhT1p7UZ7huNC3vwhljXFdgQFQHI" -H "Content-Type: application/json" -d "{}"'
+
 
 
                 }
