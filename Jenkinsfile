@@ -6,7 +6,7 @@ pipeline {
     }
     stages{
         
-        stage('Building') {
+        stage('Build') {
             steps {
             
                     // Ensure npm is installed and install project dependencies
@@ -17,7 +17,7 @@ pipeline {
 
 
        
-        stage('Testing') {
+        stage('Test') {
             steps {
                 
                     // Run the tests with npm
@@ -37,8 +37,8 @@ pipeline {
 
             
         }
-        //rnd_BhT1p7UZ7huNC3vwhljXFdgQFQHI
-        stage('deploying') {
+        
+        stage('Deploy') {
             steps {
                 script {
             
