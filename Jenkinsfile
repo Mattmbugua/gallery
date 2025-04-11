@@ -17,7 +17,7 @@ pipeline {
 
 
        
-        stage('Test') {
+        stage('Test ') {
             steps {
                 
                     // Run the tests with npm
