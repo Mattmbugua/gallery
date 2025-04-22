@@ -7,7 +7,7 @@ pipeline {
     stages{
       stage('Checkout') {
             steps {
-                // Replace with your GitHub repo URL
+                
                 git url: 'https://github.com/Mattmbugua/gallery.git', branch: 'master'
             }
         }
