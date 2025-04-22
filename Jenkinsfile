@@ -5,6 +5,12 @@ pipeline {
         nodejs 'NodeJS 16'
     }
     stages{
+      stage('Checkout') {
+            steps {
+                // Replace with your GitHub repo URL
+                git url: 'https://github.com/Mattmbugua/gallery.git', branch: 'master'
+            }
+        }
         
         stage('Build') {
             steps {
