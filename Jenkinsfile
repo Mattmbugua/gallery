@@ -5,7 +5,7 @@ pipeline {
         nodejs 'NodeJS 16'
     }
     stages{
-      stage('Checkout') {
+      stage('Checkingout') {
             steps {
                 
                 git url: 'https://github.com/Mattmbugua/gallery.git', branch: 'master'
