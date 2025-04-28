@@ -1,10 +1,14 @@
 pipeline {
     agent any
+
+    triggers {
+        githubPush()
+    }
     
     tools {
         nodejs 'NodeJS 16'
     }
-    enironment{
+    environment{
         GIT_REPO='https://github.com/Mattmbugua/gallery.git'
     }
     stages{
