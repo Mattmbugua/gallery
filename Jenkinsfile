@@ -13,10 +13,20 @@ pipeline {
                 echo "Doing the Github step"
             }
         }
+         stage('Ensure Software is installed') {
+            steps {
+                    
+                    
+                    sh 'node --version'
+                    sh 'npm --version'
+                    echo "npm installation check"
+                
+            }
+        }
         
         stage('Building') {
             steps {
-            
+                    
                     // Ensure npm is installed and install project dependencies
                     sh 'npm install'
                 
