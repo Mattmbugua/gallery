@@ -4,11 +4,14 @@ pipeline {
     tools {
         nodejs 'NodeJS 16'
     }
+    enironment{
+        GIT_REPO='https://github.com/Mattmbugua/gallery.git'
+    }
     stages{
-      stage('Checkout') {
+      stage('clone source code') {
             steps {
                 
-                git url: 'https://github.com/Mattmbugua/gallery.git', branch: 'master'
+                git url:"${GIT_REPO}" , branch: 'master'
 
                 echo "Doing the Github step"
             }
