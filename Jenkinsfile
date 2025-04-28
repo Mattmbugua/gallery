@@ -9,6 +9,8 @@ pipeline {
             steps {
                 
                 git url: 'https://github.com/Mattmbugua/gallery.git', branch: 'master'
+
+                echo "Doing the Github thing"
             }
         }
         
@@ -36,7 +38,7 @@ pipeline {
                     emailext(
                         subject: "Jenkins Build Failed: Testing Stage.",
                         body: "The build failed at the Test stage. Please check the Jenkins job for more details.",
-                        to: 'mathewmbugua2015@gmail.com' // Change this to your email address
+                        to: 'mathewmbugua2015@gmail.com' 
                     )
                 }
             }
@@ -48,7 +50,7 @@ pipeline {
             steps {
                 script {
             
-                    // Ensure npm is installed and install project dependencies
+                    // Deployment of the website
                    
 
                     sh 'curl -X POST https://api.render.com/v1/services/srv-cvlcl8bipnbc73di56r0/deploys -H "Authorization: Bearer $rnd_BhT1p7UZ7huNC3vwhljXFdgQFQHI" -H "Content-Type: application/json" -d "{}"'
@@ -87,7 +89,7 @@ pipeline {
             emailext(
                 subject: "Jenkins Build Failed !",
                 body: "The Jenkins pipeline has failed. Please check the Jenkins job for more details.",
-                to: 'mathewmbugua2015@gmail.com' // Change this to your email address
+                to: 'mathewmbugua2015@gmail.com' 
             )
         }
     }
