@@ -10,11 +10,11 @@ pipeline {
                 
                 git url: 'https://github.com/Mattmbugua/gallery.git', branch: 'master'
 
-                echo "Doing the Github thing"
+                echo "Doing the Github step"
             }
         }
         
-        stage('Build') {
+        stage('Building') {
             steps {
             
                     // Ensure npm is installed and install project dependencies
@@ -25,7 +25,7 @@ pipeline {
 
 
        
-        stage('Test ') {
+        stage('Testing') {
             steps {
                 
                     // Run the tests with npm
@@ -72,12 +72,7 @@ pipeline {
             echo "Pipeline completed successfully!"
             //send slack message 
              slackSend(channel: 'mathew_ip1', message: "✅ Build ${env.BUILD_ID} succeeded! View it here: https://gallery-01hj.onrender.com")
-            //Send success email
-            emailext(
-                subject: "Jenkins Build Successful",
-                body: "The Jenkins pipeline has completed successfully.All stages passed.",
-                to: 'mathewmbugua2015@gmail.com' 
-            )
+            
         }
         failure {
             echo "Pipeline failed!"
@@ -85,12 +80,7 @@ pipeline {
 
 
             slackSend(channel: 'mathew_ip1', message: "❌ Build failed.Try building again!")
-            //Send failure email
-            emailext(
-                subject: "Jenkins Build Failed !",
-                body: "The Jenkins pipeline has failed. Please check the Jenkins job for more details.",
-                to: 'mathewmbugua2015@gmail.com' 
-            )
+            
         }
     }
 }
